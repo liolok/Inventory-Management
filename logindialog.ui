@@ -58,12 +58,6 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="maxLength">
-       <number>16</number>
-      </property>
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
       </property>
@@ -77,9 +71,6 @@
     </item>
     <item row="0" column="0">
      <widget class="QLineEdit" name="lineEditUsername">
-      <property name="maxLength">
-       <number>16</number>
-      </property>
       <property name="echoMode">
        <enum>QLineEdit::Normal</enum>
       </property>
@@ -92,7 +83,7 @@
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QDialogButtonBox" name="buttonBox">
+     <widget class="QDialogButtonBox" name="loginButton">
       <property name="standardButtons">
        <set>QDialogButtonBox::Ok</set>
       </property>
