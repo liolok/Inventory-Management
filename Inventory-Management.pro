@@ -32,6 +32,7 @@ SOURCES += \
 HEADERS += \
     mainwindow.h \
     logindialog.h \
+    const.h \
 
 FORMS += \
     mainwindow.ui \
