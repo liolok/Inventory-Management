@@ -26,7 +26,7 @@ LoginDialog::LoginDialog(QWidget *parent) :
     {
         QString s = "INSERT INTO Users VALUES ('%1', '%2')";
         QString add_default_user = s.arg(DEFAULT_USERNAME, DEFAULT_PASSWORD);
-        qDebug() << add_default_user << qry->exec();
+        qDebug() << add_default_user << qry->exec(add_default_user);
     }
 }
 
