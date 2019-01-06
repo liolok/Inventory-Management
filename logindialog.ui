@@ -83,12 +83,9 @@
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QDialogButtonBox" name="loginButton">
-      <property name="standardButtons">
-       <set>QDialogButtonBox::Ok</set>
-      </property>
-      <property name="centerButtons">
-       <bool>true</bool>
+     <widget class="QPushButton" name="loginButton">
+      <property name="text">
+       <string>Login</string>
       </property>
      </widget>
     </item>

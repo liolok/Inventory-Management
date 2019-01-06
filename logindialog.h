@@ -3,8 +3,7 @@
 
 #include "const.h"
 #include <QDialog>
-#include <QLineEdit>
-#include <QPushButton>
+
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QtDebug>
@@ -23,9 +22,6 @@ public:
 
 private:
     Ui::LoginDialog *ui;
-    QLineEdit *lineEditUsername;
-    QLineEdit *lineEditPassword;
-    QPushButton *loginButton;
 
     QSqlDatabase db;
     QSqlQuery query;

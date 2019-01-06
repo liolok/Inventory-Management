@@ -6,12 +6,8 @@ LoginDialog::LoginDialog(QWidget *parent) :
     ui(new Ui::LoginDialog)
 {
     ui->setupUi(this);
-    lineEditUsername = ui->lineEditUsername;
-    lineEditUsername->setMaxLength(USERNAME_MAX_LEN);
-    lineEditPassword = ui->lineEditPassword;
-    lineEditPassword->setMaxLength(PASSWORD_MAX_LEN);
-    loginButton = ui->loginButton->button(QDialogButtonBox::Ok);
-    loginButton->setText(tr("Login"));
+    ui->lineEditUsername->setMaxLength(USERNAME_MAX_LEN);
+    ui->lineEditPassword->setMaxLength(PASSWORD_MAX_LEN);
 
     QSqlDatabase db = QSqlDatabase::addDatabase(DB_TYPE);
     db.setDatabaseName(DB_PATH);
