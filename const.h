@@ -1,7 +1,9 @@
 #ifndef CONST_H
 #define CONST_H
 
-#include <QStandardPaths>
+#include <QString>
+#include <QtDebug>
+#include <QSqlQuery>
 
 const unsigned int USERNAME_MAX_LEN = 16;
 const unsigned int PASSWORD_MAX_LEN = 16;

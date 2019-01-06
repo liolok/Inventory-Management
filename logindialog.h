@@ -4,10 +4,6 @@
 #include "const.h"
 #include <QDialog>
 
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QtDebug>
-
 namespace Ui {
     class LoginDialog;
 }
@@ -22,9 +18,7 @@ public:
 
 private:
     Ui::LoginDialog *ui;
-
-    QSqlDatabase db;
-    QSqlQuery query;
+    QSqlQuery *qry;
 
 private slots:
     void on_loginButton_clicked();
