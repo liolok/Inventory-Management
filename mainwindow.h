@@ -2,9 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "userswidget.h"
 
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 
 class MainWindow : public QMainWindow
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    UsersWidget *users;
 };
 
 #endif // MAINWINDOW_H
