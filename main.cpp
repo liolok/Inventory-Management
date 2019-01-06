@@ -17,10 +17,14 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
     LoginDialog ld;
-    MainWindow mw;
 
-    if (ld.exec() == QDialog::Accepted) { mw.show(); app.exec(); }
-    else { app.quit(); }
+    if (ld.exec() == QDialog::Accepted)
+    {
+        MainWindow mw;
+        mw.show();
+        app.exec();
+    }
+    else app.quit();
 
     return 0;
 }
