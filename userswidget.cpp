@@ -24,7 +24,7 @@ UsersWidget::~UsersWidget()
 
 void UsersWidget::on_addUserButton_clicked()
 {
-    qDebug() << "[Add User Button] Clicked...";
+    qDebug() << "[Users Widget] Clicked add user button...";
     QString name = ui->lineEditUsername->text();
     QString pswd = ui->lineEditPassword->text();
     QString pswdConfirm = ui->lineEditPasswordConfirm->text();
@@ -45,9 +45,9 @@ void UsersWidget::on_addUserButton_clicked()
 
 void UsersWidget::refreshUserList()
 {
-    qDebug() << "[User List] Updating...";
-    QString view_all_user = "SELECT name FROM Users";
-    qDebug() << view_all_user << qry->exec(view_all_user);
+    qDebug() << "Refreshing user list...";
+    QString get_all_username = "SELECT name FROM Users";
+    qDebug() << get_all_username << qry->exec(get_all_username);
     ui->userList->clear();
     while (qry->next()) { ui->userList->addItem(qry->value(0).toString()); }
 }
