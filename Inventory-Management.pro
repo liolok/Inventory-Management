@@ -29,17 +29,20 @@ SOURCES += \
     mainwindow.cpp \
     logindialog.cpp \
     userswidget.cpp \
+    inventorywidget.cpp \
 
 HEADERS += \
     mainwindow.h \
     logindialog.h \
     const.h \
     userswidget.h \
+    inventorywidget.h \
 
 FORMS += \
     mainwindow.ui \
     logindialog.ui \
     userswidget.ui \
+    inventorywidget.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
