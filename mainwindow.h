@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "inventorywidget.h"
 #include "userswidget.h"
 
 namespace Ui {
@@ -18,6 +19,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    InventoryWidget *inventory;
     UsersWidget *users;
 };
 
