@@ -26,5 +26,6 @@ int main(int argc, char *argv[])
     }
     else app.quit();
 
+    db.close();
     return 0;
 }
