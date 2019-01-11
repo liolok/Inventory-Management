@@ -22,6 +22,20 @@ InventoryWidget::InventoryWidget(QWidget *parent) :
         QString::number(ITEMNAME_MAX_LEN), QString::number(CATEGORY_MAX_LEN));
     qDebug() << create_inventory_table << qry->exec(create_inventory_table);
 
+    // If no inbound table yet, create it.
+    s = "CREATE TABLE IF NOT EXISTS Inbound ("
+        "name char(%1), cate char(%2), time char(20) PRIMARY KEY)";
+    QString create_inbound_table = s.arg(
+        QString::number(ITEMNAME_MAX_LEN), QString::number(CATEGORY_MAX_LEN));
+    qDebug() << create_inbound_table << qry->exec(create_inbound_table);
+
+    // If no outbound table yet, create it.
+    s = "CREATE TABLE IF NOT EXISTS Inventory ("
+        "name char(%1), cate char(%2), time char(20) PRIMARY KEY)";
+    QString create_outbound_table = s.arg(
+        QString::number(ITEMNAME_MAX_LEN), QString::number(CATEGORY_MAX_LEN));
+    qDebug() << create_outbound_table << qry->exec(create_outbound_table);
+
     refreshInventoryTable();
 }
 
@@ -49,37 +63,49 @@ void InventoryWidget::on_pushButtonInbound_clicked()
     // Special Syntax Addition | NOT Standard SQL | SQLite >= 3.24.0
     // See: https://www.sqlite.org/lang_UPSERT.html
     QString s = "INSERT INTO Inventory VALUES('%1', '%2', %3) "
-        "ON CONFLICT(name) DO UPDATE SET amount=amount+%3";
+        "ON CONFLICT(name) DO UPDATE SET amount = amount + %3";
     QString inbound = s.arg(name, cate, QString::number(increment));
     bool success = qry->exec(inbound);
     qDebug() << inbound << success;
-    if (success) { refreshInventoryTable(); }
+    if (success)
+    {
+        refreshInventoryTable();
+        qDebug() << "Logging inbound...";
+        QString s = "INSERT INTO Inbound VALUES("
+            "'%1', '%2', datetime('now', 'localtime'))";
+        QString log_inbound = s.arg(name, cate);
+        qDebug() << log_inbound << qry->exec(log_inbound);
+    }
 }
 
 void InventoryWidget::on_pushButtonOutbound_clicked()
 {
     qDebug() << "[Inventory Widget] Outbound button clicked...";
-    QString name = ui->lineEditOutName->text();
+    QString name = ui->lineEditOutName->text(), cate;
     int amount, decrement = ui->spinBoxOutAmount->value();
 
-    // Get currnet amount of item.
-    QString s = "SELECT amount FROM Inventory WHERE name='%1'";
-    QString get_amount = s.arg(name);
-    qDebug() << get_amount << qry->exec(get_amount);
-    if (qry->first()) { amount = qry->value(0).toInt(); }
-    else { qDebug() << "Item not found, won't outbound."; return; }
+    // Get category and currnet amount of item.
+    QString s = "SELECT cate, amount FROM Inventory WHERE name='%1'";
+    QString get_item_info = s.arg(name);
+    qDebug() << get_item_info << qry->exec(get_item_info);
+    if (!qry->first()) { qDebug() << "Item not found."; return; }
+    else { cate = qry->value(0).toString(); amount = qry->value(1).toInt(); }
     // Ensure amount would still be non-negtaive after outbound.
-    if (amount < decrement)
-    {
-        qDebug() << "Item amount not enough, won't outbound.";
-        return;
-    }
+    if (amount < decrement) { qDebug() << "Amount not enough."; return; }
 
     s = "UPDATE Inventory SET amount=amount-%1 WHERE name='%2'";
     QString outbound = s.arg(QString::number(decrement), name);
     bool success = qry->exec(outbound);
     qDebug() << outbound << success;
-    if (success) { refreshInventoryTable(); }
+    if (success)
+    {
+        refreshInventoryTable();
+        qDebug() << "Logging outbound...";
+        s = "INSERT INTO Outbound VALUES("
+            "'%1', '%2', datetime('now', 'localtime'))";
+        QString log_outbound = s.arg(name, cate);
+        qDebug() << log_outbound << qry->exec(log_outbound);
+    }
 }
 
 void InventoryWidget::refreshInventoryTable()
