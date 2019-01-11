@@ -9,11 +9,11 @@ InventoryWidget::InventoryWidget(QWidget *parent) :
 {
     qDebug() << "[Inventory Widget] Constructing...";
     ui->setupUi(this);
-    ui->lineEditInboundName->setMaxLength(ITEMNAME_MAX_LEN);
-    ui->lineEditInboundCate->setMaxLength(CATEGORY_MAX_LEN);
-    ui->spinInboundAmount->setMaximum(INVENTORY_IO_MAX);
-    ui->lineEditOutboundName->setMaxLength(ITEMNAME_MAX_LEN);
-    ui->spinOutboundAmount->setMaximum(INVENTORY_IO_MAX);
+    ui->lineEditInName->setMaxLength(ITEMNAME_MAX_LEN);
+    ui->lineEditInCategory->setMaxLength(CATEGORY_MAX_LEN);
+    ui->spinBoxInAmount->setMaximum(INVENTORY_IO_MAX);
+    ui->lineEditOutName->setMaxLength(ITEMNAME_MAX_LEN);
+    ui->spinBoxOutAmount->setMaximum(INVENTORY_IO_MAX);
 
     // If no inventory table yet, create it.
     QString s = "CREATE TABLE IF NOT EXISTS Inventory ("
@@ -30,16 +30,17 @@ InventoryWidget::~InventoryWidget()
     qDebug() << "[Inventory Widget] Destructing...";
     delete ui;
     delete qry;
+    delete model;
 }
 
-void InventoryWidget::on_inboundButton_clicked()
+void InventoryWidget::on_pushButtonInbound_clicked()
 {
     qDebug() << "[Inventory Widget] Inbound button clicked...";
-    QString name = ui->lineEditInboundName->text();
-    QString cate = ui->lineEditInboundCate->text();
-    int increment = ui->spinInboundAmount->value();
+    QString name = ui->lineEditInName->text();
+    QString cate = ui->lineEditInCategory->text();
+    int increment = ui->spinBoxInAmount->value();
 
-    if (!(name.length() || cate.length()))
+    if (!(name.length() && cate.length()))
     {
         qDebug() << "Field no input, won't inbound item.";
         return;
@@ -55,11 +56,11 @@ void InventoryWidget::on_inboundButton_clicked()
     if (success) { refreshInventoryTable(); }
 }
 
-void InventoryWidget::on_outboundButton_clicked()
+void InventoryWidget::on_pushButtonOutbound_clicked()
 {
     qDebug() << "[Inventory Widget] Outbound button clicked...";
-    QString name = ui->lineEditOutboundName->text();
-    int amount, decrement = ui->spinOutboundAmount->value();
+    QString name = ui->lineEditOutName->text();
+    int amount, decrement = ui->spinBoxOutAmount->value();
 
     // Get currnet amount of item.
     QString s = "SELECT amount FROM Inventory WHERE name='%1'";

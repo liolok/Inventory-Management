@@ -3,7 +3,6 @@
 
 #include "const.h"
 #include <QWidget>
-#include <QSqlTableModel>
 #include <QSqlQueryModel>
 
 namespace Ui {
@@ -13,6 +12,7 @@ namespace Ui {
 class InventoryWidget : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit InventoryWidget(QWidget *parent = nullptr);
     ~InventoryWidget();
@@ -26,8 +26,8 @@ private:
 signals:
 
 private slots:
-    void on_inboundButton_clicked();
-    void on_outboundButton_clicked();
+    void on_pushButtonInbound_clicked();
+    void on_pushButtonOutbound_clicked();
 };
 
 #endif // INVENTORYWIDGET_H

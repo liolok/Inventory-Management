@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="1">
-    <layout class="QVBoxLayout">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <property name="spacing">
       <number>12</number>
      </property>
@@ -34,42 +34,42 @@
      <item>
       <layout class="QGridLayout" name="gridLayoutInbound">
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEditInboundName">
+        <widget class="QLineEdit" name="lineEditInName">
          <property name="clearButtonEnabled">
           <bool>true</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="labelInboundName">
+        <widget class="QLabel" name="labelInName">
          <property name="text">
-          <string>Name:</string>
+          <string>Name</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QSpinBox" name="spinInboundAmount">
+        <widget class="QSpinBox" name="spinBoxInAmount">
          <property name="minimum">
           <number>1</number>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="labelInboundCategory">
+        <widget class="QLabel" name="labelInCategory">
          <property name="text">
-          <string>Category:</string>
+          <string>Category</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="labelInboundAmount">
+        <widget class="QLabel" name="labelInAmount">
          <property name="text">
-          <string>Amount:</string>
+          <string>Amount</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEditInboundCate">
+        <widget class="QLineEdit" name="lineEditInCategory">
          <property name="clearButtonEnabled">
           <bool>true</bool>
          </property>
@@ -78,7 +78,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="inboundButton">
+      <widget class="QPushButton" name="pushButtonInbound">
        <property name="text">
         <string>Inbound Item</string>
        </property>
@@ -88,52 +88,46 @@
       </widget>
      </item>
      <item>
-      <spacer name="verticalSpacer_2">
+      <spacer name="spacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
        </property>
       </spacer>
      </item>
      <item>
       <layout class="QGridLayout" name="gridLayoutOutbound">
        <item row="0" column="0">
-        <widget class="QLabel" name="labelOutboundName">
+        <widget class="QLabel" name="labelOutName">
          <property name="text">
-          <string>Name:</string>
+          <string>Name</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEditOutboundName">
+        <widget class="QLineEdit" name="lineEditOutName">
          <property name="clearButtonEnabled">
           <bool>true</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QSpinBox" name="spinOutboundAmount">
+        <widget class="QSpinBox" name="spinBoxOutAmount">
          <property name="minimum">
           <number>1</number>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="labelOutboundAmount">
+        <widget class="QLabel" name="labelOutAmount">
          <property name="text">
-          <string>Amount:</string>
+          <string>Amount</string>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="outboundButton">
+      <widget class="QPushButton" name="pushButtonOutbound">
        <property name="text">
         <string>Outbound Item</string>
        </property>
