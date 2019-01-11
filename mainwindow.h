@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "inventorywidget.h"
+#include "inboundwidget.h"
 #include "userswidget.h"
 
 namespace Ui {
@@ -19,7 +20,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
     InventoryWidget *inventory;
+    InboundWidget *inbound;
     UsersWidget *users;
 };
 
