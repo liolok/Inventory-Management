@@ -30,7 +30,7 @@ InventoryWidget::InventoryWidget(QWidget *parent) :
     qDebug() << create_inbound_table << qry->exec(create_inbound_table);
 
     // If no outbound table yet, create it.
-    s = "CREATE TABLE IF NOT EXISTS Inventory ("
+    s = "CREATE TABLE IF NOT EXISTS Outbound ("
         "name char(%1), cate char(%2), time char(20) PRIMARY KEY)";
     QString create_outbound_table = s.arg(
         QString::number(ITEMNAME_MAX_LEN), QString::number(CATEGORY_MAX_LEN));
@@ -93,7 +93,7 @@ void InventoryWidget::on_pushButtonOutbound_clicked()
     // Ensure amount would still be non-negtaive after outbound.
     if (amount < decrement) { qDebug() << "Amount not enough."; return; }
 
-    s = "UPDATE Inventory SET amount=amount-%1 WHERE name='%2'";
+    s = "UPDATE Inventory SET amount = amount - %1 WHERE name = '%2'";
     QString outbound = s.arg(QString::number(decrement), name);
     bool success = qry->exec(outbound);
     qDebug() << outbound << success;
