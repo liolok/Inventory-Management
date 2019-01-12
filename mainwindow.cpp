@@ -14,6 +14,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tabWidget->addTab(inventory, tr("Inventory"));
     ui->tabWidget->addTab(inbound, tr("Inbound"));
     ui->tabWidget->addTab(users, tr("Users"));
+
+    connect(inventory, &InventoryWidget::inbounded,
+            inbound, &InboundWidget::refreshCategoryComboBox);
+    connect(inventory, &InventoryWidget::inbounded,
+            inbound, &InboundWidget::on_pushButtonQuery_clicked);
 }
 
 MainWindow::~MainWindow()

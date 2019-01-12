@@ -13,9 +13,6 @@ InboundWidget::InboundWidget(QWidget *parent) :
     ui->setupUi(this);
     ui->lineEditNameKey->setMaxLength(ITEMNAME_MAX_LEN);
 
-    // TODO: connect [InventoryWidget::pushButtonInbound] and
-    // this refreshCategoryComboBox()
-
     refreshInboundTableView();
     refreshCategoryComboBox();
 }

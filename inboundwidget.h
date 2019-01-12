@@ -23,9 +23,9 @@ private:
     QSqlQueryModel *modelInbound;
     QSqlQueryModel *modelCategory;
     void refreshInboundTableView(const QString& qry_clause = "");
-    void refreshCategoryComboBox();
 
-private slots:
+public slots:
+    void refreshCategoryComboBox();
     void on_pushButtonQuery_clicked();
 };
 
