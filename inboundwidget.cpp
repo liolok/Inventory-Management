@@ -50,12 +50,13 @@ void InboundWidget::on_pushButtonQuery_clicked()
     refreshInboundTableView(clause);
 }
 
-void InboundWidget::refreshInboundTableView(const QString& qry_clause)
+void InboundWidget::refreshInboundTableView(const QString& qry_clause/*=""*/)
 {
     qDebug() << "Refreshing inbound table view...";
-    QString s = "SELECT name AS %1, cate AS %2, time as %3 FROM Inbound";
+    QString s = "SELECT name AS %1, cate AS %2, "
+        "amount as %3, time as %4 FROM Inbound";
     QString view_inbound = s.arg(
-        tr("Name"), tr("Category"), tr("Time")) + qry_clause;
+        tr("Name"), tr("Category"), tr("Amount"), tr("Time")) + qry_clause;
     qDebug() << view_inbound;
     modelInbound->setQuery(view_inbound);
     ui->tableViewInbound->setModel(modelInbound);
