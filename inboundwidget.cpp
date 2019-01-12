@@ -12,6 +12,8 @@ InboundWidget::InboundWidget(QWidget *parent) :
     qDebug() << "[Inbound Widget] Constructing...";
     ui->setupUi(this);
     ui->lineEditNameKey->setMaxLength(ITEMNAME_MAX_LEN);
+    ui->tableViewInbound->horizontalHeader()->
+        setSectionResizeMode(QHeaderView::Stretch);
 
     refreshInboundTableView();
     refreshCategoryComboBox();

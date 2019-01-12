@@ -14,6 +14,8 @@ InventoryWidget::InventoryWidget(QWidget *parent) :
     ui->spinBoxInAmount->setMaximum(INVENTORY_IO_MAX);
     ui->lineEditOutName->setMaxLength(ITEMNAME_MAX_LEN);
     ui->spinBoxOutAmount->setMaximum(INVENTORY_IO_MAX);
+    ui->tableViewInventory->horizontalHeader()
+        ->setSectionResizeMode(QHeaderView::Stretch);
 
     // If no inventory table yet, create it.
     QString s = "CREATE TABLE IF NOT EXISTS Inventory ("
@@ -116,5 +118,5 @@ void InventoryWidget::refreshInventoryTable()
     QString s = "SELECT name AS %1, cate AS %2, amount AS %3 FROM Inventory";
     QString view_inventory = s.arg(tr("Name"), tr("Category"), tr("Amount"));
     model->setQuery(view_inventory);
-    ui->tableInventory->setModel(model);
+    ui->tableViewInventory->setModel(model);
 }
