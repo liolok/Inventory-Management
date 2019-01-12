@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "inventorywidget.h"
 #include "inboundwidget.h"
+#include "outboundwidget.h"
 #include "userswidget.h"
 
 namespace Ui {
@@ -23,6 +24,7 @@ private:
 
     InventoryWidget *inventory;
     InboundWidget *inbound;
+    OutboundWidget *outbound;
     UsersWidget *users;
 };
 
