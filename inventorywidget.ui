@@ -10,10 +10,7 @@
     <height>480</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <layout class="QGridLayout" name="gridLayout_2">
+  <layout class="QGridLayout" name="gridLayoutInventory" columnstretch="6,4">
    <item row="0" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
      <property name="spacing">
@@ -92,6 +89,12 @@
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
       </spacer>
      </item>
      <item>
@@ -139,9 +142,6 @@
     <widget class="QTableView" name="tableInventory">
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
-     </property>
-     <property name="selectionMode">
-      <enum>QAbstractItemView::NoSelection</enum>
      </property>
      <attribute name="horizontalHeaderStretchLastSection">
       <bool>true</bool>

@@ -10,10 +10,7 @@
     <height>480</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <layout class="QGridLayout" name="gridLayoutRoot">
+  <layout class="QGridLayout" name="gridLayoutInbound" columnstretch="6,4">
    <item row="1" column="1">
     <layout class="QVBoxLayout">
      <property name="spacing">

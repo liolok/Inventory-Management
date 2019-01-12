@@ -10,96 +10,89 @@
     <height>480</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QGridLayout" name="gridLayoutUsers" columnstretch="6,4">
    <item row="0" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <widget class="QListWidget" name="userList">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="modelColumn">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <property name="leftMargin">
+      <number>12</number>
+     </property>
+     <property name="topMargin">
+      <number>12</number>
+     </property>
+     <property name="rightMargin">
+      <number>12</number>
+     </property>
      <item>
-      <widget class="QListWidget" name="userList">
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
+      <widget class="QLineEdit" name="lineEditUsername">
+       <property name="placeholderText">
+        <string>Username</string>
        </property>
-       <property name="modelColumn">
-        <number>0</number>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <property name="spacing">
-        <number>12</number>
+      <widget class="QLineEdit" name="lineEditPassword">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
-       <property name="leftMargin">
-        <number>12</number>
+       <property name="placeholderText">
+        <string>Password</string>
        </property>
-       <property name="topMargin">
-        <number>12</number>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
        </property>
-       <property name="rightMargin">
-        <number>12</number>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEditPasswordConfirm">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
-       <item>
-        <widget class="QLineEdit" name="lineEditUsername">
-         <property name="placeholderText">
-          <string>Username</string>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEditPassword">
-         <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
-         </property>
-         <property name="placeholderText">
-          <string>Password</string>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEditPasswordConfirm">
-         <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
-         </property>
-         <property name="placeholderText">
-          <string>Confirm Password</string>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="addUserButton">
-         <property name="text">
-          <string>Add User</string>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
+       <property name="placeholderText">
+        <string>Confirm Password</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addUserButton">
+       <property name="text">
+        <string>Add User</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>
