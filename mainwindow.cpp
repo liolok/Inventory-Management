@@ -22,9 +22,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(inventory, &InventoryWidget::inbounded,
             inbound, &InboundWidget::on_pushButtonQuery_clicked);
 
-    connect(inventory, &InventoryWidget::inbounded,
+    connect(inventory, &InventoryWidget::outbounded,
             outbound, &OutboundWidget::refreshCategoryComboBox);
-    connect(inventory, &InventoryWidget::inbounded,
+    connect(inventory, &InventoryWidget::outbounded,
             outbound, &OutboundWidget::on_pushButtonQuery_clicked);
 }
 
