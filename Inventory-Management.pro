@@ -31,6 +31,7 @@ SOURCES += \
     userswidget.cpp \
     inventorywidget.cpp \
     inboundwidget.cpp \
+    outboundwidget.cpp \
 
 HEADERS += \
     mainwindow.h \
@@ -39,6 +40,7 @@ HEADERS += \
     userswidget.h \
     inventorywidget.h \
     inboundwidget.h \
+    outboundwidget.h \
 
 FORMS += \
     mainwindow.ui \
@@ -46,6 +48,7 @@ FORMS += \
     userswidget.ui \
     inventorywidget.ui \
     inboundwidget.ui \
+    outboundwidget.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
