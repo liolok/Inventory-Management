@@ -24,6 +24,8 @@ private:
     void refreshInventoryTable();
 
 signals:
+    void inbounded();
+    void outbounded();
 
 private slots:
     void on_pushButtonInbound_clicked();

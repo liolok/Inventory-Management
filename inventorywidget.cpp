@@ -75,6 +75,7 @@ void InventoryWidget::on_pushButtonInbound_clicked()
             "'%1', '%2', %3, datetime('now', 'localtime'))";
         QString log_inbound = s.arg(name, cate, QString::number(increment));
         qDebug() << log_inbound << qry->exec(log_inbound);
+        inbounded();
     }
 }
 
@@ -105,6 +106,7 @@ void InventoryWidget::on_pushButtonOutbound_clicked()
             "'%1', '%2', %3, datetime('now', 'localtime'))";
         QString log_outbound = s.arg(name, cate, QString::number(decrement));
         qDebug() << log_outbound << qry->exec(log_outbound);
+        outbounded();
     }
 }
 
