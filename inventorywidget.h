@@ -3,6 +3,7 @@
 
 #include "const.h"
 #include <QWidget>
+#include <QSqlQuery>
 #include <QSqlQueryModel>
 
 namespace Ui {

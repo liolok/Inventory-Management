@@ -2,8 +2,6 @@
 #define CONST_H
 
 #include <QString>
-#include <QtDebug>
-#include <QSqlQuery>
 
 // Database
 const QString DB_TYPE = "QSQLITE";

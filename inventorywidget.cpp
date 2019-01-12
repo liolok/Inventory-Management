@@ -1,5 +1,6 @@
 #include "inventorywidget.h"
 #include "ui_inventorywidget.h"
+#include <QtDebug>
 
 InventoryWidget::InventoryWidget(QWidget *parent) :
     QWidget(parent),

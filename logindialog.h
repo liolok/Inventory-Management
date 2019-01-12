@@ -3,6 +3,7 @@
 
 #include "const.h"
 #include <QDialog>
+#include <QSqlQuery>
 
 namespace Ui {
     class LoginDialog;

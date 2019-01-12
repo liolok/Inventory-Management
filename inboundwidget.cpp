@@ -1,6 +1,7 @@
 #include "const.h"
 #include "inboundwidget.h"
 #include "ui_inboundwidget.h"
+#include <QtDebug>
 
 InboundWidget::InboundWidget(QWidget *parent) :
     QWidget(parent),

@@ -1,6 +1,7 @@
 #include "const.h"
 #include "outboundwidget.h"
 #include "ui_outboundwidget.h"
+#include <QtDebug>
 
 OutboundWidget::OutboundWidget(QWidget *parent) :
     QWidget(parent),

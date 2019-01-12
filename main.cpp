@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QSqlDatabase>
 #include <QSqlError>
+#include <QtDebug>
 
 int main(int argc, char *argv[])
 {
