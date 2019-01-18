@@ -48,7 +48,7 @@
 ## Development Environment 开发环境
 
 - Operating System: Arch Linux x86_64 (4.20.0-arch1-1-ARCH)
-- QT: qt5-base 5.12.0-2
-- SQL: sqlite 3.26.0-1
-- IDE: qtcreator 4.8.0-2
-- Editor: vscodium-bin 1.30.2-4
+- QT: qt5-base 5.12.0
+- SQL: sqlite 3.26.0
+- IDE: qtcreator 4.8.0
+- Editor: vscodium-bin 1.30.2
